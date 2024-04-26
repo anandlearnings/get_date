@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-date-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: get-date-app
+  template:
+    metadata:
+      labels:
+        app: get-date-app
+    spec:
+      containers:
+      - name: get-date-app
+        image: edaraanand/get_date:v1
+        ports:
+        - containerPort: 5000
